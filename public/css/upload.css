@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {
+    margin: 0;
+    padding: 0;
+}
+#uploader{
+    -webkit-appearance: none;
+    appearance: none;
+    margin:10px;
+    width:100%;
+}
+html {
+    margin:25px !important;
+    height: 90%;
+    overflow-x: hidden;
+}
+.image{
+    border:1.5px solid black;
+    border-radius :2px;
+    cursor: pointer;
+}
+.image:hover{
+    border:1px solid black;
+    border-radius :2px;
+    cursor: pointer;
+}
+body {
+    overflow-x: hidden;
+    font-family: montserrat, arial, verdana;
+    background: transparent;
+}
+.heading{
+    font-family: 'Roboto Mono',monospace;
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+
+#image{
+    cursor: pointer;
+    border:1.5px solid black;
+}
+#image:hover{
+    cursor: pointer;
+    border:1px solid black;
+}
+form {
+    margin-top:25px;
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+    /*stacking forms above each other*/
+    position: relative;
+}

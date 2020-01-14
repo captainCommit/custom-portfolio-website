@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Website Builder</title>
+    <link rel="stylesheet" href="css/upload.css">
+    <link rel="stylesheet" href="css/loading.min.css">
+    <link rel="stylesheet" href="css/ldbtn.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <div class="modal fade" id="uploadModal">
+        <div class="modal-dialog">
+            <div class="modal-content">  
+                <div class="modal-body">
+                    <div class="row text-left mx-5">
+                        Please wait while your files are being uploaded
+                        <span id="list"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="load-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">  
+                <div class="modal-body">
+                    <div class="row text-left mx-5" id="message">
+                        Please wait while your files are being loaded
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center my-3">
+        <div class="col-md-12">
+            <div id="msform" class="text-center">
+                <form class="form" id="builder-form">
+                    <h4 class="heading my-2">Website Builder</h4>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img class="img-fluid img-thumbnail my-3" id="image" src="img/person-gray-photo-placeholder-woman-vector-22964655.jpg" height="600" width="600">
+                            <input type="file" id="profile" style="display: none;" accept="image/*" onchange="change(this)"/>
+                        </div>
+                        <div class="col-md-10 mt-2">
+                            <div class="row my-2">
+                                <div class="col-md-2 my-3">
+                                    <select name="salutation" id="salutation" class="form-control">
+                                        <option value="">Select</option>
+                                        <option value="none">None</option>
+                                        <option value="mr">Mr.</option>
+                                        <option value="mrs">Mrs.</option>
+                                        <option value="ms">Miss</option>
+                                        <option value="prof">Prof.</option>
+                                        <option value="dr">Dr.</option>
+                                        <option value="rev">Rev.</option>
+                                        <option value="other">Others</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 my-3"><input type="text" name="fname" id="fname" placeholder="First Name" class="form-control" required></div>
+                                <div class="col-md-5 my-3"><input type="text" name="lname" id="lname" placeholder="Last Name" class="form-control" required></div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-sm-4 mx-1 my-3"><input type="text" name="desig" id="desig" class="form-control" placeholder="Designation" required></div>
+                                <div class="col-md-7 my-3"><input type="text" name="pow" id="placeofwork" class="form-control" placeholder="Place Of Work" required></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <textarea name="about" id="about" class="form-control" rows="4" placeholder="Something About You......." required></textarea>
+                        <p class="text-muted text-left small"><span id="chars_left">500</span>&nbsp;characters left</p>
+                    </div>
+                    <div class="form-row">
+                        <table class="table table-resposnsive table-bordered" id="works">
+                            <thead>
+                                <th colspan="5">Your Works</th>
+                            </thead>
+                            <thead>
+                                <th>Title</th>
+                                <th>Abstract</th>
+                                <th>File</th>
+                                <th>Remove</th>
+                            </thead>  
+                        </table>
+                        <button type="button" class="btn btn-primary mx-2" id="addWorks"><i class="fa fa-plus"></i></button>
+                    </div>
+                    <div class="form-row my-3 d-flex justify-content-start" id="previousCVs" style="visibility: hidden;">
+                        <div class="col-md-12">
+                            <p>Current CV : <a href="" id="currentCV"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(Don't Upload New CV if the current is okay)</p>
+                        </div>
+                    </div>
+                    <div class="form-row my-3">
+                        <div class="col-md-3 my-2">
+                            <label for="resume">Upload Your Resume (PDF only) </label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="file" name="resume" id="resume" class="form-control" accept="application/pdf">
+                        </div>
+                    </div>
+                    <button type="button" id="submit" class="btn btn-primary mr-3 my-3 ld-ext-right hovering">Submit data<div class="ld ld-ring ld-spin-fast"></div></button>
+                </form>
+            </div>
+        </div>
+    </div> 
+    <script src="/__/firebase/6.3.3/firebase-app.js"></script>
+    <script src="/__/firebase/6.3.3/firebase-auth.js"></script>
+    <script src="/__/firebase/6.3.3/firebase-database.js"></script>
+    <script src="/__/firebase/6.3.3/firebase-storage.js"></script>
+    <script src="/__/firebase/6.3.3/firebase-firestore.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/sweetalert.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+</html>

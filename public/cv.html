@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faculty Website</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4" id="items">
+		  		<h1><a href="index.html" class="logo"><p id="name">XYZ PQR</p><span id="desig">nvjnakbabkvkaj</span></a></h1>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="index.html"><span class="fa fa-home mr-3"></span> Home</a>
+	          </li>
+	          <li>
+	              <a href="cv.html"><span class="fa fa-user mr-3"></span> About</a>
+	          </li>
+	          <li>
+              <a href="research.html"><span class="fa fa-briefcase mr-3"></span>Works</a>
+            </li>
+	      </div>
+    	</nav>
+      <div class="modal fade" id="upload-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">  
+                <div class="modal-body">
+                    <div class="row text-left mx-5">
+                        Please wait while your files are being loaded
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div id="content" class="p-4">
+        <div class="d-flex justify-content-center"><h2>About Me</h2></div>
+        <br>
+        <div class="d-flex justify-content-around mb-2">
+          <h3 class="text">Take a look at my <a href="" id="header" class="link">CV</a></h3>
+        </div>
+        <div class="row  d-flex justify-content-center" id="pdf-container">
+          <object class="view" id="container"type="application/pdf" width="65%" height="720px" view="Fit"> 
+              <p class="text">It appears you don't have a PDF plugin for this browser.
+               No biggie... you can <a href="" id="lnk">click here to download the PDF file.</a></p>  
+          </object>
+        </div>
+      </div>
+	</div>
+  <script src="/__/firebase/6.3.3/firebase-app.js"></script>
+  <script src="/__/firebase/6.3.3/firebase-auth.js"></script>
+  <script src="/__/firebase/6.3.3/firebase-database.js"></script>
+  <script src="/__/firebase/6.3.3/firebase-storage.js"></script>
+  <script src="/__/firebase/6.3.3/firebase-firestore.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/sweetalert.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cv.js"></script>
+  </body>
+</html>
