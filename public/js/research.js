@@ -14,6 +14,8 @@ $(document).ready(async ()=>{
 	try{
         var ref = await colRef.get()
         const data = ref.data()
+        document.getElementById('name').innerText = data['fname']+" "+data['lname']
+        document.getElementById('desig').innerText = data['desig']+"@"+data['placeOfWork']
         cards = data["works"]
         cards.forEach(element => {
             createWorkCard(element)

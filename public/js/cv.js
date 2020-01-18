@@ -20,6 +20,8 @@ $(document).ready(()=>{
         if(doc.exists){
             const data = doc.data()
             const url = data['CV']
+            document.getElementById('name').innerText = data['fname']+" "+data['lname']
+            document.getElementById('desig').innerText = data['desig']+"@"+data['placeOfWork']
             cont.setAttribute('data',url)
             link.setAttribute('href',url)
             link.setAttribute('target','_blank')
