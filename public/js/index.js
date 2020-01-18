@@ -1,1 +1,28 @@
-var _0x448e=['firestore','#modal','show','modal','hide','ready','collection','Users','doc','get','data','getElementById','innerText','fname','lname','desig','placeOfWork','image','src','profilePic','about','log'];(function(_0x1c589a,_0x3ea510){var _0x351fba=function(_0x40fe8d){while(--_0x40fe8d){_0x1c589a['push'](_0x1c589a['shift']());}};_0x351fba(++_0x3ea510);}(_0x448e,0xb0));var _0x296f=function(_0x1c589a,_0x3ea510){_0x1c589a=_0x1c589a-0x0;var _0x351fba=_0x448e[_0x1c589a];return _0x351fba;};const firestore=firebase[_0x296f('0x0')]();function showModal(){$(_0x296f('0x1'))['modal'](_0x296f('0x2'));}function hideModal(){$(_0x296f('0x1'))[_0x296f('0x3')](_0x296f('0x4'));}$(document)[_0x296f('0x5')](async()=>{showModal();var _0x4997ee=firestore[_0x296f('0x6')](_0x296f('0x7'))[_0x296f('0x8')]('Data');try{var _0x207209=await _0x4997ee[_0x296f('0x9')]();const _0x407e1e=_0x207209[_0x296f('0xa')]();document[_0x296f('0xb')]('name')[_0x296f('0xc')]=_0x407e1e[_0x296f('0xd')]+'\x20'+_0x407e1e[_0x296f('0xe')];document['getElementById']('desig')['innerText']=_0x407e1e[_0x296f('0xf')]+'@'+_0x407e1e[_0x296f('0x10')];document[_0x296f('0xb')](_0x296f('0x11'))[_0x296f('0x12')]=_0x407e1e[_0x296f('0x13')];document[_0x296f('0xb')]('about')[_0x296f('0xc')]=_0x407e1e[_0x296f('0x14')];}catch(_0x364b6e){console[_0x296f('0x15')](_0x364b6e);}finally{hideModal();}});
+const firestore = firebase.firestore()
+function showModal()
+{
+    $('#modal').modal('show')
+}
+function hideModal()
+{
+    $('#modal').modal('hide')
+}
+$(document).ready(async ()=>{
+    showModal()
+	var colRef = firestore.collection("Users").doc("Data")
+	try{
+        var ref = await colRef.get()
+        const data = ref.data()
+        document.getElementById('name').innerText = data['fname']+" "+data['lname']
+        document.getElementById('desig').innerText = data['desig']+"@"+data['placeOfWork']
+        document.getElementById('image').src = data['profilePic']
+        document.getElementById('about').innerText = data['about']
+    }
+    catch(e)
+    {
+        console.log(e)
+    }
+    finally{
+        hideModal()
+    }
+})

@@ -1,1 +1,35 @@
-const _0x5be5=['target','_blank','upload-modal','catch','log','firestore','getElementById','container','header','modal','show','hide','ready','collection','Users','doc','Data','get','then','exists','data','setAttribute','href'];(function(_0x2d185b,_0x4a712a){const _0x3dba48=function(_0x4f8f82){while(--_0x4f8f82){_0x2d185b['push'](_0x2d185b['shift']());}};_0x3dba48(++_0x4a712a);}(_0x5be5,0x130));const _0x276b=function(_0x2d185b,_0x4a712a){_0x2d185b=_0x2d185b-0x0;let _0x3dba48=_0x5be5[_0x2d185b];return _0x3dba48;};const storage=firebase['storage']();const firestore=firebase[_0x276b('0x0')]();var cont=document[_0x276b('0x1')](_0x276b('0x2'));var link=document[_0x276b('0x1')]('lnk');var header=document['getElementById'](_0x276b('0x3'));showModal('upload-modal');function showModal(_0x300f9e){$('#'+_0x300f9e)[_0x276b('0x4')](_0x276b('0x5'));}function hideModal(_0x4efd06){$('#'+_0x4efd06)[_0x276b('0x4')](_0x276b('0x6'));}$(document)[_0x276b('0x7')](()=>{firestore[_0x276b('0x8')](_0x276b('0x9'))[_0x276b('0xa')](_0x276b('0xb'))[_0x276b('0xc')]()[_0x276b('0xd')](_0x15572a=>{if(_0x15572a[_0x276b('0xe')]){const _0x39eed0=_0x15572a[_0x276b('0xf')]();const _0x168a13=_0x39eed0['CV'];cont[_0x276b('0x10')](_0x276b('0xf'),_0x168a13);link['setAttribute'](_0x276b('0x11'),_0x168a13);link[_0x276b('0x10')](_0x276b('0x12'),_0x276b('0x13'));header[_0x276b('0x10')](_0x276b('0x11'),_0x168a13);header[_0x276b('0x10')](_0x276b('0x12'),_0x276b('0x13'));hideModal(_0x276b('0x14'));}})[_0x276b('0x15')](function(_0x22d318){hideModal(_0x276b('0x14'));console[_0x276b('0x16')](_0x22d318);});});
+const storage = firebase.storage();
+const firestore = firebase.firestore();
+var cont = document.getElementById('container')
+var link = document.getElementById('lnk')
+var header = document.getElementById('header')
+showModal('upload-modal')
+function showModal(id)
+{
+    //e.preventDefault();
+    $('#'+id).modal('show')
+}
+function hideModal(id)
+{
+    //e.preventDefault();
+    $('#'+id).modal('hide')
+}
+$(document).ready(()=>{
+    
+    firestore.collection("Users").doc("Data").get().then((doc)=>{
+        if(doc.exists){
+            const data = doc.data()
+            const url = data['CV']
+            cont.setAttribute('data',url)
+            link.setAttribute('href',url)
+            link.setAttribute('target','_blank')
+            header.setAttribute('href',url)
+            header.setAttribute('target','_blank')
+            hideModal('upload-modal')
+        }
+        hideModal('upload-modal')
+    }).catch(function(err){
+        hideModal('upload-modal')
+        console.log(err)
+    })
+})
